@@ -47,7 +47,7 @@ class Quickbooks {
             this.axios = axios_1.default.create(Object.assign({ baseURL: prefixUrl }, defaults));
             this.axios.interceptors.request.use((config) => {
                 config.baseURL = prefixUrl;
-                config.headers = Object.assign(Object.assign({}, config.headers), { Authorization: 'Bearer ' + this.opts.accessToken, 'Company-Id': this.opts.realmId, 'Content-Type': 'application/json', 'Request-Id': (0, uuid_1.v4)(), 'User-Agent': 'node-ts-quickbooks' });
+                config.headers = Object.assign(Object.assign({}, config.headers), { Authorization: 'Bearer ' + this.opts.accessToken, 'Company-Id': this.opts.realmId, 'Content-Type': 'application/json', 'Request-Id': uuid_1.v4(), 'User-Agent': 'node-ts-quickbooks' });
                 return config;
             });
             this.axios.interceptors.response.use((response) => response, // success handler
