@@ -4,13 +4,13 @@ type QuickbooksOnlineArgs = QuickbooksArgs & { minorVersion: string };
 
 export default class QuickbooksOnline extends Quickbooks {
   constructor(opts: QuickbooksOnlineArgs) {
-    super();
+    super(opts);
     opts.baseUrl =
       'https://sandbox-quickbooks.api.intuit.com/v3/company/' +
       opts.realmId +
       '/';
     opts.defaults = {
-      searchParams: { minorversion: opts.minorVersion || '59' },
+      params: { minorversion: opts.minorVersion || '59' },
     };
     this.createClient(opts);
   }

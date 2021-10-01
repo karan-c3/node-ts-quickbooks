@@ -2,7 +2,7 @@ import Quickbooks from './quickbooks';
 
 class QuickbooksPayments extends Quickbooks {
   constructor(opts: QuickbooksArgs) {
-    super();
+    super(opts);
     opts.baseUrl = 'https://sandbox.api.intuit.com/quickbooks/v4/';
     this.createClient(opts);
   }
